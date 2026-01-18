@@ -136,7 +136,7 @@
         footer { 
             background: #111; 
             color: #fff; 
-            padding: 60px 20px 30px 20px; 
+            padding: 60px 0 30px 0; 
             margin-top: 80px; 
         }
 
@@ -144,8 +144,20 @@
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 30px;
+            grid-template-columns: 1.2fr 1fr 1fr; 
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-section:nth-child(2), 
+        .footer-section:nth-child(3) {
+            align-items: center; 
         }
 
         .footer-section h3 {
@@ -293,6 +305,3 @@
 
 </body>
 </html>
-
-
-
