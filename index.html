@@ -109,28 +109,27 @@
 
         .sport-content { flex: 1; padding: 50px; }
         .sport-content h3 { 
-            font-size: 2rem; 
+            font-size: 2.2rem; 
             color: var(--primary-color); 
             margin: 0 0 20px 0;
-            position: relative;
         }
 
         .sport-content ul { list-style: none; padding: 0; }
         .sport-content li { 
             margin-bottom: 15px; 
-            padding-left: 35px; 
+            padding-left: 40px; 
             position: relative; 
-            font-size: 1.05rem;
+            font-size: 1.2rem;
         }
 
-        .soccer-list li::before { content: '⚽'; position: absolute; left: 0; }
-        .volley-list li::before { content: '🏐'; position: absolute; left: 0; }
-        .badminton-list li::before { content: '🏸'; position: absolute; left: 0; }
+        .soccer-list li::before { content: '⚽'; position: absolute; left: 0; font-size: 1.5rem; }
+        .volley-list li::before { content: '🏐'; position: absolute; left: 0; font-size: 1.5rem; }
+        .badminton-list li::before { content: '🏸'; position: absolute; left: 0; font-size: 1.5rem; }
 
         .btn-detail {
             display: inline-block;
             margin-top: 25px;
-            padding: 14px 35px;
+            padding: 16px 40px;
             background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             color: white !important;
             text-decoration: none;
@@ -139,6 +138,7 @@
             text-transform: uppercase;
             box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
             transition: 0.3s;
+            font-size: 1.1rem;
         }
 
         .btn-detail:hover { 
@@ -149,12 +149,67 @@
         footer { 
             background: #1a1a1a; 
             color: #fff; 
-            padding: 50px 20px; 
-            text-align: center; 
+            padding: 60px 20px; 
             margin-top: 80px; 
         }
-        footer p { margin: 10px 0; opacity: 0.8; }
-        footer a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+
+        .footer-content {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section { flex: 1; min-width: 300px; }
+
+        .footer-section h3 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .footer-section p { 
+            font-size: 1.2rem; 
+            margin: 15px 0; 
+            line-height: 1.8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-section a { 
+            color: #fff; 
+            text-decoration: none; 
+            transition: 0.3s;
+            background: rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .footer-section a:hover { 
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-section h3 { border-left: none; border-bottom: 3px solid var(--accent-color); display: inline-block; padding: 0 0 10px 0; }
+            .footer-section p { justify-content: center; }
+        }
     </style>
 </head>
 <body>
@@ -221,10 +276,21 @@
 </main>
 
 <footer>
-    <p><b>CỘNG ĐỒNG THỂ THAO</b> - Kết nối những tâm hồn yêu vận động</p>
-    <p>Bạn đã sẵn sàng tham gia cùng chúng tôi? <a href="Dang_ki.html">ĐĂNG KÝ TẠI ĐÂY</a></p>
-    <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">
-        &copy; 2026 Sports Community. All rights reserved.
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Thông tin liên lạc</h3>
+            <p>📞 <b>Hotline:</b> 0123.456.789</p>
+            <p>📧 <b>Email:</b> hotro@congdongthethao.vn</p>
+            <p>📍 <b>Địa chỉ:</b> Khu vực rèn luyện thể chất</p>
+        </div>
+        <div class="footer-section" style="text-align: right;">
+            <h3>Liên kết nhanh</h3>
+            <p>🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></p>
+            <p>👤 <b>Thành viên:</b> <a href="Dang_ki.html">Đăng ký tham gia ngay</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 Sports Community. Nơi kết nối những tâm hồn vận động.
     </div>
 </footer>
 
