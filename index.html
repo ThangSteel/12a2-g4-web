@@ -3,261 +3,228 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cộng Đồng Thể Thao - THPT Vĩnh Trạch</title>
+    <title>CỘNG ĐỒNG THỂ THAO</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <style>
-        /* Toàn bộ hệ thống màu và font */
         :root {
             --primary-color: #8b0000;
             --accent-color: #ff0000;
-            --dark-bg: #1a1a1a;
-            --glass-white: rgba(255, 255, 255, 0.95);
+            --dark-overlay: rgba(0,0,0,0.75);
         }
 
         body { 
             font-family: 'Roboto', sans-serif; 
-            line-height: 1.6; 
-            background: #f0f2f5; 
-            color: #333; 
             margin: 0; 
-            overflow-x: hidden;
+            background: #f4f6f9; 
+            color: #333;
         }
 
-        /* Hero Banner cực chất */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') center/cover no-repeat;
+            height: 40vh;
+            background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('images/hero-bg.jpg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             color: white;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+            text-align: center;
+            clip-path: ellipse(150% 100% at 50% 0%);
+            padding-bottom: 40px;
         }
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            text-transform: uppercase;
+            font-size: 3.2rem;
             margin: 0;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
         }
 
-        /* Slogan Row */
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
         .slogan-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px;
-            margin: -50px auto 40px;
+            gap: 25px;
+            max-width: 1050px;
+            margin: -60px auto 50px;
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .slogan-card {
             background: white;
-            padding: 30px;
+            padding: 35px 20px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border-bottom: 4px solid var(--primary-color);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
         }
 
-        .slogan-card:hover { transform: translateY(-10px); }
-        .slogan-card h2 { color: var(--primary-color); margin-top: 0; }
-
-        /* Danh sách môn thể thao */
-        .section-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
+        .slogan-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 15px 40px rgba(139, 0, 0, 0.2);
         }
+
+        .slogan-card h2 { 
+            color: var(--primary-color); 
+            margin: 0 0 12px 0; 
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-container { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
 
         .sport-item {
             display: flex;
-            align-items: center;
-            margin-bottom: 60px;
             background: white;
-            border-radius: 20px;
+            border-radius: 25px;
+            margin-bottom: 60px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            align-items: center;
+            transition: 0.4s ease;
         }
 
-        .sport-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
+        .sport-item:hover { transform: scale(1.01); }
 
         .sport-item.reverse { flex-direction: row-reverse; }
 
-        .sport-image { flex: 1.2; overflow: hidden; }
-        .sport-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: 0.5s;
+        .sport-image { flex: 1.3; height: 380px; overflow: hidden; }
+        .sport-image img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: 0.6s;
         }
-
         .sport-item:hover .sport-image img { transform: scale(1.1); }
 
         .sport-content { flex: 1; padding: 50px; }
-        .sport-content h3 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        .sport-content h3 { 
+            font-size: 2rem; 
+            color: var(--primary-color); 
+            margin: 0 0 20px 0;
             position: relative;
         }
 
-        .sport-content h3::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--accent-color);
-            margin-top: 10px;
-        }
-
         .sport-content ul { list-style: none; padding: 0; }
-        .sport-content li { margin-bottom: 12px; padding-left: 25px; position: relative; }
-        .sport-content li::before {
-            content: '⚽'; /* Có thể thay đổi icon theo môn */
-            position: absolute; left: 0;
+        .sport-content li { 
+            margin-bottom: 15px; 
+            padding-left: 35px; 
+            position: relative; 
+            font-size: 1.05rem;
         }
 
-        /* Nút bấm cực ngầu */
+        .soccer-list li::before { content: '⚽'; position: absolute; left: 0; }
+        .volley-list li::before { content: '🏐'; position: absolute; left: 0; }
+        .badminton-list li::before { content: '🏸'; position: absolute; left: 0; }
+
         .btn-detail {
             display: inline-block;
-            padding: 15px 35px;
+            margin-top: 25px;
+            padding: 14px 35px;
             background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             color: white !important;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
             box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
             transition: 0.3s;
         }
 
-        .btn-detail:hover {
+        .btn-detail:hover { 
             box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
-            transform: translateY(-3px);
             filter: brightness(1.1);
         }
 
-        /* Footer hiện đại */
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 50px;
+        footer { 
+            background: #1a1a1a; 
+            color: #fff; 
+            padding: 50px 20px; 
+            text-align: center; 
+            margin-top: 80px; 
         }
-
-        .footer-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            padding: 0 20px;
-        }
-
-        .footer-grid a { color: #ff4d4d; text-decoration: none; }
-        .footer-grid a:hover { text-decoration: underline; }
-
-        @media (max-width: 768px) {
-            .sport-item, .sport-item.reverse { flex-direction: column; }
-            .slogan-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2rem; }
-        }
+        footer p { margin: 10px 0; opacity: 0.8; }
+        footer a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header class="hero">
-    <h1>Cộng Đồng Thể Thao</h1>
-    <p style="font-size: 1.2rem; opacity: 0.9;">Nơi đam mê rực cháy - THPT Vĩnh Trạch</p>
+    <h1>CỘNG ĐỒNG THỂ THAO</h1>
+    <p>NƠI ĐAM MÊ RỰC CHÁY - KẾT NỐI SỨC MẠNH</p>
 </header>
 
 <div class="slogan-container">
     <div class="slogan-card">
         <h2>Năng động</h2>
-        <p>Hoạt động năng nổ và hiệu quả trong mọi phong trào</p>
+        <p>Thúc đẩy phong trào, hoạt động năng nổ và hiệu quả trong mọi cuộc chơi.</p>
     </div>
     <div class="slogan-card">
         <h2>Đam mê</h2>
-        <p>Cháy hết mình với tình yêu thể thao bất tận</p>
+        <p>Cháy hết mình với tinh thần thể thao bất diệt và tình yêu vô tận.</p>
     </div>
     <div class="slogan-card">
         <h2>Tỏa sáng</h2>
-        <p>Vươn tới những đỉnh cao và giải thưởng danh giá</p>
+        <p>Nỗ lực không ngừng để vươn tới những đỉnh cao và thành tích xứng đáng.</p>
     </div>
 </div>
 
 <main class="section-container">
     <div class="sport-item">
-        <div class="sport-image">
-            <img src="images/bongda.jpg" alt="Bóng đá">
-        </div>
+        <div class="sport-image"><img src="images/bongda.jpg" alt="Bóng đá"></div>
         <div class="sport-content">
             <h3>Môn Bóng Đá</h3>
-            <ul>
+            <ul class="soccer-list">
                 <li>Đam mê và tinh thần đồng đội bất diệt.</li>
                 <li>Mỗi bàn thắng là một cung bậc cảm xúc.</li>
                 <li>Thi đấu hết mình vì màu cờ sắc áo.</li>
             </ul>
-            <a href="bong_da.html" class="btn-detail">Xem chi tiết</a>
+            <a href="bong_da.html" class="btn-detail">Khám phá ngay</a>
         </div>
     </div>
 
     <div class="sport-item reverse">
-        <div class="sport-image">
-            <img src="images/bcc.jpg" alt="Bóng chuyền">
-        </div>
+        <div class="sport-image"><img src="images/bcc.jpg" alt="Bóng chuyền"></div>
         <div class="sport-content">
             <h3>Môn Bóng Chuyền</h3>
-            <ul>
+            <ul class="volley-list">
                 <li>Sức mạnh và sự khéo léo trong từng pha bóng.</li>
                 <li>Sự phối hợp nhịp nhàng của cả tập thể.</li>
                 <li>Bùng nổ năng lượng trên sân đấu.</li>
             </ul>
-            <a href="bong_chuyen.html" class="btn-detail">Xem chi tiết</a>
+            <a href="bong_chuyen.html" class="btn-detail">Khám phá ngay</a>
         </div>
     </div>
 
     <div class="sport-item">
-        <div class="sport-image">
-            <img src="images/cl.jpg" alt="Cầu lông">
-        </div>
+        <div class="sport-image"><img src="images/cl.jpg" alt="Cầu lông"></div>
         <div class="sport-content">
             <h3>Môn Cầu Lông</h3>
-            <ul>
+            <ul class="badminton-list">
                 <li>Rèn luyện phản xạ nhanh nhẹn và bền bỉ.</li>
                 <li>Sự kết hợp hoàn hảo giữa kỹ thuật và tốc độ.</li>
                 <li>Thử thách giới hạn bản thân mỗi ngày.</li>
             </ul>
-            <a href="cau_long.html" class="btn-detail">Xem chi tiết</a>
+            <a href="cau_long.html" class="btn-detail">Khám phá ngay</a>
         </div>
     </div>
 </main>
 
 <footer>
-    <div class="footer-grid">
-        <div>
-            <h3 style="color: white; margin-top: 0;">LIÊN HỆ</h3>
-            <p>🏫 <b>Trường THPT Vĩnh Trạch</b></p>
-            <p>📞 Hotline: 0123 456 789</p>
-            <p>🌐 Website: <a href="index.html">congdongthethao.com</a></p>
-        </div>
-        <div style="text-align: right;">
-            <h3 style="color: white; margin-top: 0;">THAM GIA</h3>
-            <p>Bạn đã sẵn sàng?</p>
-            <a href="Dang_ki.html" class="btn-detail" style="font-size: 0.8rem; padding: 10px 20px;">Đăng ký ngay</a>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; opacity: 0.5;">
-        &copy; 2026 Cộng Đồng Thể Thao THPT Vĩnh Trạch. All rights reserved.
+    <p><b>CỘNG ĐỒNG THỂ THAO</b> - Kết nối những tâm hồn yêu vận động</p>
+    <p>Bạn đã sẵn sàng tham gia cùng chúng tôi? <a href="Dang_ki.html">ĐĂNG KÝ TẠI ĐÂY</a></p>
+    <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">
+        &copy; 2026 Sports Community. All rights reserved.
     </div>
 </footer>
 
