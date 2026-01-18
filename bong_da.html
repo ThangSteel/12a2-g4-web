@@ -6,157 +6,27 @@
     <title>Cộng Đồng Thể Thao</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f4f7f6; color: #333; }
-        
-        .section-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-      
-        .sport-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        
-        .sport-item:hover {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .sport-item.reverse { flex-direction: row-reverse; }
-
-        .sport-content { flex: 1; padding: 40px; }
-
-        .sport-image { flex: 1; }
-
-        .sport-image img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-        }
-
-      
-        .btn-detail {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #8b0000; /* Màu đỏ đậm truyền thống */
-            color: white !important;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-            border: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-      
-        .btn-detail:hover {
-            background: #ff0000;
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(255,0,0,0.3);
-        }
-
-       
-        .banner h1 span {
-            padding: 10px 25px;
-            background: rgba(0,0,0,0.7) !important;
-            color: #fff;
-            border-radius: 4px;
-        }
-
-        h3 { color: #8b0000; font-size: 1.5rem; margin-bottom: 15px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-		.quiz { 
-            margin: 20px 0; 
-            padding: 20px; 
-            background-color: #f8f9fa; 
-            border-radius: 8px; 
-        }
-        .quiz h3 { 
-            color: #007bff; 
-        }
-        .quiz button { 
-            background-color: #007bff; 
-            color: white; 
-            border: none; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            margin: 5px; 
-        }
-        .quiz button:hover { 
-            background-color: #0056b3; 
-        }
-        .result { 
-            margin-top: 10px; 
-            font-weight: bold; 
-        }
-		h2 { 
-            color: #007bff; 
-            border-bottom: 2px solid #007bff; 
-            padding-bottom: 10px; 
-        }
-.slideshow {
-  width: 800px;            
-  height: 300px;
-  margin: 0 auto;            
-  position: relative;         
-  overflow: hidden;          
-  background: #000;          
-}
-
-.slideshow img {
-  width: 100%;               
-  height: 100%;               
-  object-fit: cover;          
-  object-position: center;   
-  position: absolute;        
-  top: 0;
-  left: 0;
-  opacity: 0;                
-  transition: opacity 1s ease;
-}
-
-.slideshow img.active {
-  opacity: 1;
-}
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<header>
-	<div class="banner">
-		<h1><span style="background-color:#C0C0C0">Cộng Đồng Thể Thao</span></h1>
-	</div>
-	<div class="slogan">
-		<div class="row">
-			<div id="b3a" class="block_3">
-				<h2>Năng động</h2>
-				<p>Hoạt động năng nổ và hiệu quả</p>
-			</div>
-			<div id="b3b" class="block_3">
-				<h2>Đam mê</h2>
-				<p>Cháy hết mình trong các cuộc chơi</p>
-			</div>
-			<div id="b3c" class="block_3">
-				<h2>Tỏa sáng</h2>
-				<p>Giành những giải thương cao nhất</p>
-			</div>	
-		</div>
-	</div>
+<header class="banner">
+    <h1>CỘNG ĐỒNG THỂ THAO</h1>
+    <p>NƠI ĐAM MÊ RỰC CHÁY - KẾT NỐI TINH THẦN THỂ THAO</p>
 </header>
+<div class="slogan-container">
+    <div class="slogan-card">
+        <h2>Năng động</h2>
+        <p>Thúc đẩy phong trào, hoạt động năng nổ và hiệu quả trong mọi cuộc chơi.</p>
+    </div>
+    <div class="slogan-card">
+        <h2>Đam mê</h2>
+        <p>Cháy hết mình với tinh thần thể thao bất diệt và tình yêu vô tận.</p>
+    </div>
+    <div class="slogan-card">
+        <h2>Tỏa sáng</h2>
+        <p>Nỗ lực không ngừng để vươn tới những đỉnh cao và thành tích xứng đáng.</p>
+    </div>
+</div>
 	<h2>Khái quát về bóng đá</h2>
 	    <div class="slideshow" style="text-align: center;">
             <img src="images/banh.jpg" width="800" height="300" class="active">
@@ -177,67 +47,40 @@
         </div>
 	
 <footer>
-	<div class="row" style="padding: 30px 10%; background: #ddd;">
-        <div style="flex: 1;">
-            <p><b>Liên lạc:</b></p>
-			<p>🏫 <strong>Trường THPT Vĩnh Trạch</strong> </p>
-            <p>📞 <b>0123456789</b></p>
-            <p>🌐 <b>Trang chính:</b><a href="index.html" class="link">Cộng Đồng Thể Thao</a></p>
-            <p>👤 <b>Tham gia ngay:</b><a href="Dang_ki.html" class="link">Tại đây</a></p>
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-inner">
+                <h3>Thông tin liên lạc</h3>
+                <div class="info-row">📞 <b>Hotline:</b> 0123.456.789</div>
+                <div class="info-row">📧 <b>Email:</b> hotro@congdongthethao.vn</div>
+            </div>
         </div>
-        <div style="flex: 1; text-align: right;">
-            <p><b>Thành viên:</b></p>
-           
+
+        <div class="footer-section">
+            <div class="footer-inner">
+                <h3>Liên kết nhanh</h3>
+                <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng <br> thể thao</a></div>
+                <div class="info-row">🚀 <b>Đăng kí:</b> <a href="Dang_ki.html">Tham gia ngay</a></div>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-inner">
+                <h3>Cộng tác viên</h3>
+                <div class="info-row">👤 Nguyễn Quốc Thái</div>
+                <div class="info-row">👤 Cao Văn Thắng</div>
+                <div class="info-row">👤 Lê Ngọc Phụng</div>
+            </div>
         </div>
     </div>
-	<script>
-		   
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            element.scrollIntoView({ behavior: 'smooth' });
-           
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-            document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
-        }
-
-       
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-        sections.forEach(section => observer.observe(section));
-
-        
-        function startSlideshow(container) {
-            const images = container.querySelectorAll('img');
-            let currentIndex = 0;
-            setInterval(() => {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
-            }, 3000); // Chuyển ảnh mỗi 3 giây
-        }
-        document.querySelectorAll('.slideshow').forEach(startSlideshow);
-	        
-        function checkAnswer(correctYear, selectedYear) {
-            const resultDiv = event.target.parentElement.querySelector('.result');
-            if (selectedYear === correctYear) {
-                resultDiv.textContent = 'Đúng! Bạn rất giỏi.';
-                resultDiv.style.color = 'green';
-            } else {
-                resultDiv.textContent = `Sai! Đáp án đúng là ${correctYear}.`;
-                resultDiv.style.color = 'red';
-            }
-        }
-    </script>
+    <div class="footer-bottom">
+        &copy; 2026 12A2 Nhóm 4 | THPT Vĩnh Trạch
+    </div>
 </footer>
 </body>
 
 </html>
+
 
 
 
