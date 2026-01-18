@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Đăng ký thành viên - THPT Vĩnh Trạch</title>
+    <title>ĐĂNG KÍ THÀNH VIÊN - CỘNG ĐỒNG THỂ THAO</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         .form-card {
@@ -15,7 +15,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        h2 { color: darkred; text-align: center; margin-bottom: 5px; }
+        h2 { color: darkred; text-align: center; margin-bottom: 5px; text-transform: uppercase; }
         .form-group { margin-bottom: 15px; }
         label { font-weight: bold; display: block; margin-bottom: 5px; }
         
@@ -24,13 +24,12 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box; /* Giúp padding không làm tăng chiều rộng thực tế */
+            box-sizing: border-box;
         }
 
-        /* KHẮC PHỤC LỖI TRÀN KHUNG TẠI ĐÂY */
         textarea {
-            resize: vertical; /* Chỉ cho kéo dài xuống, không cho kéo ngang */
-            max-width: 100%;  /* Đảm bảo không bao giờ vượt quá chiều rộng cha */
+            resize: vertical;
+            max-width: 100%;
             min-height: 80px;
         }
 
@@ -54,8 +53,8 @@
 
 <div class="form-card">
     <form id="regForm">
-        <h2>ĐĂNG KÍ THÀNH VIÊN CÂU LẠC BỘ NGOẠI KHÓA</h2>
-        <h2>TRƯỜNG THPT VĨNH TRẠCH</h2>
+        <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
+        <h2>CỘNG ĐỒNG THỂ THAO</h2>
 
         <div class="form-group">
             <label for="hoten">Họ và tên:</label>
@@ -120,7 +119,7 @@
             e.preventDefault();
             alert("Thông tin chứa từ ngữ không phù hợp. Vui lòng nhập lại!");
         } else {
-            alert("Gửi đăng ký thành công!");
+            alert("ĐĂNG KÝ THÀNH CÔNG!");
         }
     });
 </script>
