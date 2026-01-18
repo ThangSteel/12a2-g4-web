@@ -6,7 +6,6 @@
     <title>Đăng ký thành viên</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        /* Chỉ ghi thêm các kiểu riêng cho Form để nó "xịn" hơn mà không cần sửa file styles.css */
         .registration-box {
             background: #ffffff;
             max-width: 700px;
@@ -16,99 +15,46 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             color: #333;
         }
-
-        .form-title {
-            color: darkred; /* Theo tông màu banner của bạn */
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        /* Tối ưu các ô nhập liệu cho to và dễ bấm */
+        .form-title { color: darkred; text-align: center; margin-bottom: 25px; }
         input[type="text"], input[type="email"], input[type="date"], select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Đảm bảo không bị tràn khung */
+            width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
         }
-
-        /* Nút gửi to, rõ ràng, luôn hiển thị */
         .btn-send {
-            background-color: darkred;
-            color: white;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 20px;
+            background-color: darkred; color: white; padding: 15px 20px; border: none; border-radius: 5px;
+            cursor: pointer; width: 100%; font-weight: bold; font-size: 1.1rem; margin-top: 20px;
         }
-
-        .btn-send:hover {
-            background-color: red;
-        }
-
-        .label-text {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+        .btn-send:hover { background-color: red; }
+        .label-text { font-weight: bold; display: block; margin-top: 10px; }
+        /* Style cho thông báo lỗi */
+        #error-msg { color: red; font-weight: bold; text-align: center; display: none; margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
 <div class="registration-box">
     <div class="form-title">
-        <h2 style="margin: 0;">ĐĂNG KÍ THÀNH VIÊN CLB NGOẠI KHÓA</h2>
-        <h3 style="margin: 5px 0;">TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h3>
+        <h2>ĐĂNG KÍ THÀNH VIÊN CLB NGOẠI KHÓA</h2>
+        <h3>TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h3>
     </div>
 
-    <form>
+    <p id="error-msg">Phát hiện từ ngữ không phù hợp! Vui lòng kiểm tra lại.</p>
+
+    <form id="regForm">
         <label class="label-text" for="hoten">Họ và tên:</label>
         <input id="hoten" type="text" placeholder="Nhập họ tên của bạn..." required>
 
         <label class="label-text" for="email">Email:</label>
         <input id="email" type="email" placeholder="example@gmail.com" required>
 
-        <div style="display: flex; gap: 20px;">
-            <div style="flex: 1;">
-                <label class="label-text" for="ngaysinh">Ngày sinh:</label>
-                <input id="ngaysinh" type="date">
-            </div>
-            <div style="flex: 1;">
-                <label class="label-text">Giới tính:</label>
-                <div style="margin-top: 10px;">
-                    <input id="nam" type="radio" name="gioitinh" value="nam"> <label for="nam">Nam</label>
-                    <input id="nu" type="radio" name="gioitinh" value="nu" style="margin-left: 15px;"> <label for="nu">Nữ</label>
-                </div>
-            </div>
-        </div>
-
         <label class="label-text" for="diachi">Địa chỉ:</label>
         <textarea id="diachi" name="diachi" rows="3" placeholder="Nhập địa chỉ của bạn..."></textarea>
-
-        <label class="label-text">Môn học yêu thích:</label>
-        <div style="margin: 10px 0;">
-            <input type="checkbox" id="toan" name="monthi" value="toan"> <label for="toan">Toán</label>
-            <input type="checkbox" id="van" name="monthi" value="van" style="margin-left: 10px;"> <label for="van">Văn</label>
-            <input type="checkbox" id="ngoaingu" name="monthi" value="ngoaingu" style="margin-left: 10px;"> <label for="ngoaingu">Ngoại ngữ</label>
-        </div>
 
         <label class="label-text" for="dk">Đăng kí CLB:</label>
         <select id="dk" name="dk">
             <option value="bd">Bóng đá</option>
             <option value="bc">Bóng chuyền</option>				
             <option value="cl">Cầu lông</option>
-            <option value="br">Bóng rổ</option>
-            <option value="an">Âm nhạc</option>
-            <option value="mt">Mĩ thuật</option>
         </select>
-
-        <label class="label-text" for="hoso">Hồ sơ đính kèm:</label>
-        <input id="hoso" type="file" style="border: none; padding: 0;">
 
         <button class="btn-send" type="submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
 
@@ -117,6 +63,26 @@
         </div>
     </form>
 </div>
+
+<script>
+    const forbiddenWords = ["từ_xấu_1", "từ_xấu_2", "nhạy_cảm"]; // Thêm các từ bạn muốn chặn vào đây
+
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+        let content = document.getElementById('hoten').value + " " + document.getElementById('diachi').value;
+        content = content.toLowerCase();
+
+        const hasForbidden = forbiddenWords.some(word => content.includes(word));
+
+        if (hasForbidden) {
+            e.preventDefault(); // Chặn không cho gửi form
+            document.getElementById('error-msg').style.display = 'block';
+            alert("Vui lòng sử dụng từ ngữ lịch sự!");
+        } else {
+            document.getElementById('error-msg').style.display = 'none';
+            alert("Gửi thành công!");
+        }
+    });
+</script>
 
 </body>
 </html>
