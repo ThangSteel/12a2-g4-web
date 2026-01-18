@@ -6,93 +6,161 @@
     <title>Đăng ký thành viên - THPT Vĩnh Trạch</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        .form-card {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        body {
+            background: linear-gradient(135deg, #8b0000 0%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
         }
-        h2 { color: darkred; text-align: center; margin-bottom: 5px; }
-        .form-group { margin-bottom: 15px; }
-        label { font-weight: bold; display: block; margin-bottom: 5px; }
+
+        .form-card {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .form-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 { 
+            color: darkred; 
+            text-align: center; 
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        
+        label { 
+            font-weight: bold; 
+            display: block; 
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 0.95rem;
+        }
         
         input[type="text"], input[type="email"], input[type="date"], select, textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; /* Giúp padding không làm tăng chiều rộng thực tế */
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
         }
 
-        /* KHẮC PHỤC LỖI TRÀN KHUNG TẠI ĐÂY */
+        input:focus, select:focus, textarea:focus {
+            border-color: darkred;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(139, 0, 0, 0.2);
+        }
+
         textarea {
-            resize: vertical; /* Chỉ cho kéo dài xuống, không cho kéo ngang */
-            max-width: 100%;  /* Đảm bảo không bao giờ vượt quá chiều rộng cha */
-            min-height: 80px;
+            resize: vertical;
+            max-width: 100%;
+            min-height: 100px;
+        }
+
+        .row-flex {
+            display: flex; 
+            gap: 20px;
         }
 
         .btn-submit {
-            background-color: darkred;
+            background: linear-gradient(to right, #8b0000, #ff0000);
             color: white;
-            padding: 15px;
+            padding: 16px;
             border: none;
-            border-radius: 6px;
+            border-radius: 10px;
             font-weight: bold;
             font-size: 1.1rem;
             cursor: pointer;
             width: 100%;
-            margin-top: 20px;
-            transition: 0.3s;
+            margin-top: 10px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
-        .btn-submit:hover { background-color: red; }
+
+        .btn-submit:hover {
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover { color: darkred; }
+
+        input[type="file"] {
+            background: none;
+            border: none;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
 
 <div class="form-card">
     <form id="regForm">
-        <h2>ĐĂNG KÍ THÀNH VIÊN CÂU LẠC BỘ NGOẠI KHÓA</h2>
-        <h2>TRƯỜNG THPT VĨNH TRẠCH</h2>
+        <h2>Đăng ký thành viên</h2>
+        <h2>Trường THPT Vĩnh Trạch</h2>
+        <br>
 
         <div class="form-group">
-            <label for="hoten">Họ và tên:</label>
-            <input id="hoten" type="text" placeholder="Nhập đầy đủ họ và tên..." required>
+            <label for="hoten">Họ và tên</label>
+            <input id="hoten" type="text" placeholder="Nguyễn Văn A" required>
         </div>
 
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input id="email" type="email" placeholder="ví dụ: nguyenvana@gmail.com" required>
+            <label for="email">Địa chỉ Email</label>
+            <input id="email" type="email" placeholder="email@vi-du.com" required>
         </div>
 
-        <div style="display: flex; gap: 20px;">
+        <div class="row-flex">
             <div class="form-group" style="flex: 1;">
-                <label for="ngaysinh">Ngày sinh:</label>
+                <label for="ngaysinh">Ngày sinh</label>
                 <input id="ngaysinh" type="date" required>
             </div>
             <div class="form-group" style="flex: 1;">
-                <label>Giới tính:</label>
-                <div style="margin-top: 10px;">
-                    <input id="nam" type="radio" name="gioitinh" value="nam" required> Nam
-                    <input id="nu" type="radio" name="gioitinh" value="nu" style="margin-left: 15px;"> Nữ
+                <label>Giới tính</label>
+                <div style="padding-top: 10px;">
+                    <label style="display:inline; font-weight: normal; margin-right: 15px;">
+                        <input name="gioitinh" type="radio" value="nam" required> Nam
+                    </label>
+                    <label style="display:inline; font-weight: normal;">
+                        <input name="gioitinh" type="radio" value="nu"> Nữ
+                    </label>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="diachi">Địa chỉ:</label>
-            <textarea id="diachi" name="diachi" rows="3" placeholder="Nhập địa chỉ cư trú của bạn..."></textarea>
+            <label for="diachi">Địa chỉ liên hệ</label>
+            <textarea id="diachi" name="diachi" rows="3" placeholder="Số nhà, tên đường, phường/xã..."></textarea>
         </div>
 
         <div class="form-group">
-            <label for="hoso">Hồ sơ đính kèm:</label>
-            <input id="hoso" type="file">
-        </div>
-
-        <div class="form-group">
-            <label for="dk">Đăng kí môn Thể Thao:</label>
+            <label for="dk">Môn thể thao yêu thích</label>
             <select id="dk" name="dk" required>
                 <option value="" disabled selected>--- Chọn môn thể thao ---</option>
                 <option value="bd">Bóng đá</option>
@@ -101,10 +169,15 @@
             </select>
         </div>
 
-        <button type="submit" class="btn-submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
+        <div class="form-group">
+            <label for="hoso">Hồ sơ đính kèm (nếu có)</label>
+            <input id="hoso" type="file">
+        </div>
 
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="index.html" class="link">Quay về trang chủ</a>
+        <button type="submit" class="btn-submit">Hoàn tất đăng ký</button>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Quay về trang chủ</a>
         </div>
     </form>
 </div>
@@ -120,7 +193,7 @@
             e.preventDefault();
             alert("Thông tin chứa từ ngữ không phù hợp. Vui lòng nhập lại!");
         } else {
-            alert("Gửi đăng ký thành công!");
+            alert("Chúc mừng! Bạn đã đăng ký thành công.");
         }
     });
 </script>
