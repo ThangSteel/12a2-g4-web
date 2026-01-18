@@ -104,6 +104,28 @@
             margin-top: 10px; 
             font-weight: bold; 
         }
+		       h2 { 
+            color: #007bff; 
+            border-bottom: 2px solid #007bff; 
+            padding-bottom: 10px; 
+        }
+        .slideshow { 
+            position: relative; 
+            max-width: 100%; 
+            height: 300px; 
+            overflow: hidden; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .slideshow img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: none; 
+        }
+        .slideshow img.active { 
+            display: block; 
+        }
 
     </style>
 </head>  
@@ -130,6 +152,11 @@
 	</div>
 </header>
 	<h2>Khái quát về bóng chuyền</h2>
+	        <div class="slideshow">
+            <img src="" alt="Volleyball Game" class="active">
+            <img src="https://via.placeholder.com/800x300?text=Olympic+Volleyball" alt="Olympic Volleyball">
+            <img src="https://via.placeholder.com/800x300?text=Beach+Volleyball" alt="Beach Volleyball">
+        </div>
 	<p>Bóng chuyền là môn thể thao đồng đội, trong đó sự phối hợp giữa các vị trí đóng vai trò quyết định. Môn thể thao này giúp phát triển sức bật, sức mạnh cơ tay và khả năng phán đoán tình huống. Bóng chuyền còn rèn luyện tinh thần đồng đội, tính kỷ luật và sự kiên trì. Mỗi pha chuyền, đỡ hay đập bóng đều đòi hỏi sự chính xác và ăn ý giữa các thành viên trong đội.</p>
 	    <p><strong>Lịch sử và Phát triển:</strong> Bóng chuyền được phát minh năm 1895 bởi William G. Morgan tại Mỹ, ban đầu gọi là "mintonette". Nó lan rộng qua Thế vận hội từ 1964. Ở Việt Nam, bóng chuyền nữ nổi tiếng với đội tuyển giành huy chương châu Á, góp phần nâng cao vị thế thể thao nữ giới.</p>
         <p><strong>Quy tắc Cơ bản :</strong> Trận đấu gồm 2 đội, mỗi đội 6 cầu thủ trên sân hình chữ nhật chia lưới. Mục tiêu là đưa bóng qua lưới mà không để đối phương chạm đất. Điểm được ghi khi bóng chạm đất sân đối phương. Luật xoay vòng vị trí, không được chạm bóng 2 lần liên tiếp (trừ phát bóng), và giới hạn 3 chạm mỗi đội.</p>
@@ -160,6 +187,38 @@
         </div>
     </div>
 		<script>
+			        // JavaScript để scroll mượt mà đến section
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            element.scrollIntoView({ behavior: 'smooth' });
+            // Đặt active class cho nav
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+        }
+
+        // JavaScript để hiển thị section khi scroll vào view (hiệu ứng fade in)
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        sections.forEach(section => observer.observe(section));
+
+        // JavaScript cho slideshow tự động
+        function startSlideshow(container) {
+            const images = container.querySelectorAll('img');
+            let currentIndex = 0;
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, 3000); // Chuyển ảnh mỗi 3 giây
+        }
+        document.querySelectorAll('.slideshow').forEach(startSlideshow);
+
 	        // JavaScript cho quiz (sửa lỗi: truyền cả correctYear và selectedYear)
         function checkAnswer(correctYear, selectedYear) {
             const resultDiv = event.target.parentElement.querySelector('.result');
@@ -176,6 +235,7 @@
 </body>
 
 </html>
+
 
 
 
