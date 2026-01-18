@@ -104,6 +104,27 @@
             margin-top: 10px; 
             font-weight: bold; 
         }
+		h2 { 
+            color: #007bff; 
+            border-bottom: 2px solid #007bff; 
+            padding-bottom: 10px; 
+        }
+        .slideshow { 
+            position: relative; 
+            max-width: 100%; 
+            height: 300px; 
+            overflow: hidden; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .slideshow img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: none; 
+        }
+        .slideshow img.active { 
+            display: block; 
 
     </style>
 </head>
@@ -130,6 +151,11 @@
 	</div>
 </header>
 	<h2>Khái quát về cầu lông</h2>
+	        <div class="slideshow">
+            <img src="https://via.placeholder.com/800x300?text=MMA+Fight" alt="caulong" class="active">
+            <img src="https://via.placeholder.com/800x300?text=UFC+Championship" alt="caulong">
+            <img src="https://via.placeholder.com/800x300?text=MMA+Training" alt="caulong">
+        </div>
 	<p>Cầu lông là môn thể thao mang tính đối kháng cao, yêu cầu người chơi có phản xạ nhanh, sự linh hoạt và độ chính xác trong từng cú đánh. Việc tập luyện cầu lông thường xuyên giúp tăng cường sức khỏe tim mạch, cải thiện sự nhanh nhẹn và khả năng tập trung. Đây là môn thể thao phù hợp với nhiều lứa tuổi, vừa rèn luyện thể chất vừa mang lại cảm giác thư giãn và giải trí.</p>
 	<p><strong>Lịch sử và Phát triển:</strong>Cầu lông có nguồn gốc từ trò chơi dân gian cổ xưa ở Nam Ả và Đông Nam Á, phát triền thành trò "Poona" ở Ấn Độ, sau đó được quân đội Anh mang về và chuẩn hóa thành môn Badminton tại Anh vào cuối thế kỷ 19, trở thành môn thể thao quốc tế và chính thức có mặt tại Olympic 1992. Tại Việt Nam, cầu lông du nhập từ những năm 1960, phát triển mạnh mẽ từ 1980 với giải vô địch toàn quốc đầu tiên, và đến năm 1994 gia nhập Liên đoàn Cầu lông Thể giới (BWF).
 </p>
@@ -179,6 +205,7 @@
 </body>
 
 </html>
+
 
 
 
