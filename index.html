@@ -155,7 +155,6 @@
             align-items: flex-start;
         }
 
-        /* Giúp tiêu đề và nội dung cột 2, 3 tự căn giữa nhưng vẫn thẳng hàng lề trái với nhau */
         .footer-section:nth-child(2), 
         .footer-section:nth-child(3) {
             align-items: center; 
@@ -216,6 +215,7 @@
         @media (max-width: 950px) {
             .footer-content { grid-template-columns: 1fr; gap: 40px; }
             .footer-section h3, .info-row { justify-content: center; }
+            .footer-section:nth-child(2), .footer-section:nth-child(3) { align-items: center; }
         }
     </style>
 </head>
@@ -223,7 +223,7 @@
 
 <header class="banner">
     <h1>CỘNG ĐỒNG THỂ THAO</h1>
-    <p>NƠI ĐAM MÊ RỰC CHÁY - THPT VĨNH TRẠCH</p>
+    <p>NƠI ĐAM MÊ RỰC CHÁY - KẾT NỐI TINH THẦN THỂ THAO</p>
 </header>
 
 <div class="slogan-container">
@@ -295,7 +295,7 @@
         <div class="footer-section">
             <div class="footer-inner">
                 <h3>Liên kết nhanh</h3>
-                <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></div>
+                <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng</a></div>
                 <div class="info-row">🚀 <b>Đăng kí:</b> <a href="Dang_ki.html">Tham gia ngay</a></div>
             </div>
         </div>
@@ -310,7 +310,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2026 12A2 Nhóm 4 | THPT Vĩnh Trạch
+        &copy; 2026 12A2 Nhóm 4
     </div>
 </footer>
 
