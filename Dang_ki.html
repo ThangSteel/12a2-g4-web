@@ -16,10 +16,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         h2 { color: darkred; text-align: center; margin-bottom: 5px; }
-        
         .form-group { margin-bottom: 15px; }
         label { font-weight: bold; display: block; margin-bottom: 5px; }
-        
         input[type="text"], input[type="email"], input[type="date"], select, textarea {
             width: 100%;
             padding: 10px;
@@ -27,8 +25,6 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-
-        /* Nút gửi to rõ, nổi bật theo tông màu web */
         .btn-submit {
             background-color: darkred;
             color: white;
@@ -54,23 +50,23 @@
 
         <div class="form-group">
             <label for="hoten">Họ và tên:</label>
-            <input id="hoten" type="text" placeholder="Nhập họ tên của bạn..." required>
+            <input id="hoten" type="text" placeholder="Nhập đầy đủ họ và tên..." required>
         </div>
 
         <div class="form-group">
             <label for="email">Email:</label>
-            <input id="email" type="email" placeholder="example@gmail.com" required>
+            <input id="email" type="email" placeholder="ví dụ: nguyenvana@gmail.com" required>
         </div>
 
         <div style="display: flex; gap: 20px;">
             <div class="form-group" style="flex: 1;">
                 <label for="ngaysinh">Ngày sinh:</label>
-                <input id="ngaysinh" type="date">
+                <input id="ngaysinh" type="date" required>
             </div>
             <div class="form-group" style="flex: 1;">
                 <label>Giới tính:</label>
                 <div style="margin-top: 10px;">
-                    <input id="nam" type="radio" name="gioitinh" value="nam"> Nam
+                    <input id="nam" type="radio" name="gioitinh" value="nam" required> Nam
                     <input id="nu" type="radio" name="gioitinh" value="nu" style="margin-left: 15px;"> Nữ
                 </div>
             </div>
@@ -78,7 +74,7 @@
 
         <div class="form-group">
             <label for="diachi">Địa chỉ:</label>
-            <textarea id="diachi" name="diachi" rows="3"></textarea>
+            <textarea id="diachi" name="diachi" rows="3" placeholder="Nhập địa chỉ cư trú của bạn..."></textarea>
         </div>
 
         <div class="form-group">
@@ -95,7 +91,8 @@
 
         <div class="form-group">
             <label for="dk">Đăng kí CLB Thể Thao:</label>
-            <select id="dk" name="dk">
+            <select id="dk" name="dk" required>
+                <option value="" disabled selected>--- Chọn câu lạc bộ thể thao ---</option>
                 <option value="bd">Bóng đá</option>
                 <option value="bc">Bóng chuyền</option>				
                 <option value="br">Bóng rổ</option>
@@ -114,19 +111,17 @@
 </div>
 
 <script>
-    // Danh sách chặn các từ ngữ tiêu cực/nhạy cảm
-    const forbiddenWords = ["từ_xấu_1", "từ_xấu_2", "tiêu_cực"]; 
+    const forbiddenWords = ["từ_xấu_1", "từ_xấu_2"]; 
 
     document.getElementById('regForm').addEventListener('submit', function(e) {
         const checkContent = (document.getElementById('hoten').value + " " + document.getElementById('diachi').value).toLowerCase();
-        
         const hasBadWord = forbiddenWords.some(word => checkContent.includes(word));
 
         if (hasBadWord) {
             e.preventDefault();
-            alert("Vui lòng không sử dụng từ ngữ không phù hợp!");
+            alert("Thông tin chứa từ ngữ không phù hợp. Vui lòng nhập lại!");
         } else {
-            alert("Thông tin của bạn đã được gửi thành công!");
+            alert("Gửi đăng ký thành công!");
         }
     });
 </script>
