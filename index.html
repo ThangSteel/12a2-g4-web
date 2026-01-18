@@ -155,9 +155,14 @@
             align-items: flex-start;
         }
 
+        /* Giúp tiêu đề và nội dung cột 2, 3 tự căn giữa nhưng vẫn thẳng hàng lề trái với nhau */
         .footer-section:nth-child(2), 
         .footer-section:nth-child(3) {
             align-items: center; 
+        }
+
+        .footer-inner {
+            display: inline-block;
         }
 
         .footer-section h3 {
@@ -280,22 +285,28 @@
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Thông tin liên lạc</h3>
-            <div class="info-row">📞 <b>Hotline:</b> 0123.456.789</div>
-            <div class="info-row">📧 <b>Email:</b> hotro@congdongthethao.vn</div>
+            <div class="footer-inner">
+                <h3>Thông tin liên lạc</h3>
+                <div class="info-row">📞 <b>Hotline:</b> 0123.456.789</div>
+                <div class="info-row">📧 <b>Email:</b> hotro@congdongthethao.vn</div>
+            </div>
         </div>
 
         <div class="footer-section">
-            <h3>Liên kết nhanh</h3>
-            <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></div>
-            <div class="info-row">🚀 <b>Đăng kí:</b> <a href="Dang_ki.html">Tham gia ngay</a></div>
+            <div class="footer-inner">
+                <h3>Liên kết nhanh</h3>
+                <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng</a></div>
+                <div class="info-row">🚀 <b>Đăng kí:</b> <a href="Dang_ki.html">Tham gia ngay</a></div>
+            </div>
         </div>
 
         <div class="footer-section">
-            <h3>Cộng tác viên</h3>
-            <div class="info-row">👤 Nguyễn Quốc Thái</div>
-            <div class="info-row">👤 Cao Văn Thắng</div>
-            <div class="info-row">👤 Lê Ngọc Phụng</div>
+            <div class="footer-inner">
+                <h3>Cộng tác viên</h3>
+                <div class="info-row">👤 Nguyễn Quốc Thái</div>
+                <div class="info-row">👤 Cao Văn Thắng</div>
+                <div class="info-row">👤 Lê Ngọc Phụng</div>
+            </div>
         </div>
     </div>
     <div class="footer-bottom">
