@@ -109,23 +109,30 @@
             border-bottom: 2px solid #007bff; 
             padding-bottom: 10px; 
         }
-        .slideshow { 
-            position: relative; 
-            max-width: 100%; 
-            height: 300px; 
-            overflow: hidden; 
-            border-radius: 8px; 
-            margin: 20px 0; 
-        }
-        .slideshow img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: none; 
-        }
-        .slideshow img.active { 
-            display: block; 
-        }
+.slideshow {
+  width: 800px;               /* hoặc 100% nếu muốn full width */
+  height: 300px;
+  margin: 0 auto;             /* căn giữa khối slideshow so với trang */
+  position: relative;         /* cần để chứa các img absolute */
+  overflow: hidden;           /* cắt phần thừa nếu ảnh to hơn */
+  background: #000;           /* optional: nền đen nếu ảnh ko full */
+}
+
+.slideshow img {
+  width: 100%;                /* scale full width */
+  height: 100%;               /* scale full height */
+  object-fit: cover;          /* rất quan trọng: giữ tỷ lệ, crop nếu cần */
+  object-position: center;    /* căn giữa nội dung ảnh */
+  position: absolute;         /* để chồng các ảnh lên nhau */
+  top: 0;
+  left: 0;
+  opacity: 0;                 /* ẩn hết trừ cái active */
+  transition: opacity 1s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
 
     </style>
 </head>  
@@ -235,6 +242,7 @@
 </body>
 
 </html>
+
 
 
 
