@@ -6,7 +6,7 @@
     <title>Đăng ký thành viên - THPT Nguyễn Bỉnh Khiêm</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        .form-container {
+        .form-card {
             max-width: 800px;
             margin: 30px auto;
             padding: 30px;
@@ -15,10 +15,10 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        h2 { color: darkred; text-align: center; margin-bottom: 10px; }
+        h2 { color: darkred; text-align: center; margin-bottom: 5px; }
         
         .form-group { margin-bottom: 15px; }
-        label { font-weight: bold; display: block; margin-bottom: 5px; color: #333; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; }
         
         input[type="text"], input[type="email"], input[type="date"], select, textarea {
             width: 100%;
@@ -28,13 +28,13 @@
             box-sizing: border-box;
         }
 
-        /* Nút gửi luôn hiện rõ */
+        /* Nút gửi to rõ, nổi bật theo tông màu web */
         .btn-submit {
             background-color: darkred;
             color: white;
             padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
             font-size: 1.1rem;
             cursor: pointer;
@@ -47,14 +47,14 @@
 </head>
 <body>
 
-<div class="form-container">
+<div class="form-card">
     <form id="regForm">
         <h2>ĐĂNG KÍ THÀNH VIÊN CÂU LẠC BỘ NGOẠI KHÓA</h2>
         <h2 style="font-size: 1.2rem; margin-top: 0;">TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h2>
 
         <div class="form-group">
             <label for="hoten">Họ và tên:</label>
-            <input id="hoten" type="text" placeholder="Nhập đầy đủ họ tên..." required>
+            <input id="hoten" type="text" placeholder="Nhập họ tên của bạn..." required>
         </div>
 
         <div class="form-group">
@@ -108,27 +108,25 @@
         <button type="submit" class="btn-submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
 
         <div style="text-align: center; margin-top: 20px;">
-            <a href="index.html" class="link">Về trang chủ</a>
+            <a href="index.html" class="link">Quay về trang chủ</a>
         </div>
     </form>
 </div>
 
 <script>
-    // Danh sách từ ngữ cần chặn (Bạn có thể thêm từ vào đây)
-    const sensitiveWords = ["từ_xấu_1", "từ_xấu_2", "tiêu_cực"]; 
+    // Danh sách chặn các từ ngữ tiêu cực/nhạy cảm
+    const forbiddenWords = ["từ_xấu_1", "từ_xấu_2", "tiêu_cực"]; 
 
     document.getElementById('regForm').addEventListener('submit', function(e) {
-        const nameVal = document.getElementById('hoten').value.toLowerCase();
-        const addressVal = document.getElementById('diachi').value.toLowerCase();
-        const fullContent = nameVal + " " + addressVal;
+        const checkContent = (document.getElementById('hoten').value + " " + document.getElementById('diachi').value).toLowerCase();
+        
+        const hasBadWord = forbiddenWords.some(word => checkContent.includes(word));
 
-        const isSensitive = sensitiveWords.some(word => fullContent.includes(word));
-
-        if (isSensitive) {
-            e.preventDefault(); // Ngừng gửi form
-            alert("Thông tin chứa từ ngữ không phù hợp. Vui lòng chỉnh sửa lại!");
+        if (hasBadWord) {
+            e.preventDefault();
+            alert("Vui lòng không sử dụng từ ngữ không phù hợp!");
         } else {
-            alert("Cảm ơn bạn! Thông tin đăng ký đã được gửi đi.");
+            alert("Thông tin của bạn đã được gửi thành công!");
         }
     });
 </script>
