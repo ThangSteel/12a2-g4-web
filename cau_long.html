@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> </title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+            transition: 0.3s;
+        }
+
+        /* Hiệu ứng khi di chuột vào cả khối: Chỉ làm nổi bật khối chứ không ẩn hiện nội dung */
+        .sport-item:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .sport-item.reverse { flex-direction: row-reverse; }
+
+        .sport-content { flex: 1; padding: 40px; }
+
+        .sport-image { flex: 1; }
+
+        .sport-image img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* NÚT XEM CHI TIẾT: Luôn hiện rõ ràng */
+        .btn-detail {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #8b0000; /* Màu đỏ đậm truyền thống */
+            color: white !important;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Hiệu ứng khi di chuột vào NÚT: Tạo điểm nhấn */
+        .btn-detail:hover {
+            background: #ff0000;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255,0,0,0.3);
+        }
+
+        /* Header cải tiến từ bản gốc của bạn */
+        .banner h1 span {
+            padding: 10px 25px;
+            background: rgba(0,0,0,0.7) !important;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        h3 { color: #8b0000; font-size: 1.5rem; margin-bottom: 15px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
 </head>
 <body>
 <header>
@@ -48,25 +99,18 @@
 	<img src="images/caulong_chitiet.webp"alt="Ảnh minh họa" style="width:30%;height: auto;">
 	
 <footer>
-	<div class="row">
-		<div style="width: 60%;">
-			<p>Liên lạc:</p>
-			<ul>
-				<li>Điện thoại: 0123456789</li>
-				<li>Website: <a href="index.html" class="link">Cộng Đồng Thể Thao</a></li>
-				<li>Tham gia CLB: <a href="Dang_ki.html" class="link">Tham gia Cộng đồng</a></li>
-			</ul>
-		</div>
-		<div style="width: 10%;"></div>
-		<div style="width: 30%;">
-		<p>Xem chi tiết:</p>
-			<ul>
-				<li><a href="bong_da.html" class="link">Trang web Bóng đá</a></li>
-				<li><a href="bong_chuyen.html" class="link">Trang web Bóng chuyền</a></li>
-				<li><a href="cau_long.html" class="link">Trang web Cầu lông</a></li>
-			</ul>
-		</div>
-	</div>
+	<div class="row" style="padding: 30px 10%; background: #ddd;">
+        <div style="flex: 1;">
+            <p><b>Liên lạc:</b></p>
+            <p>📞 0123456789</p>
+            <p>🌐 <b>Trang chính:</b><a href="index.html" class="link">Cộng Đồng Thể Thao</a></p>
+            <p>👤 <b>Tham gia ngay:</b><a href="Dang_ki.html" class="link">Tại đây</a></p>
+        </div>
+        <div style="flex: 1; text-align: right;">
+            <p><b>Thành viên:</b></p>
+           
+        </div>
+    </div>
 		<script>
 	        // JavaScript cho quiz (sửa lỗi: truyền cả correctYear và selectedYear)
         function checkAnswer(correctYear, selectedYear) {
@@ -84,6 +128,7 @@
 </body>
 
 </html>
+
 
 
 
