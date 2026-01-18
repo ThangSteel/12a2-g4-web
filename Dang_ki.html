@@ -60,4 +60,55 @@
                 <label><b>Ngày sinh:</b></label>
                 <input id="ngaysinh" type="date">
             </div>
-            <div
+            <div style="flex: 1;">
+                <label><b>Giới tính:</b></label><br>
+                <input id="nam" type="radio" name="gioitinh" value="nam"> Nam
+                <input id="nu" type="radio" name="gioitinh" value="nu"> Nữ
+            </div>
+        </div>
+
+        <label style="display:block; margin-top:10px;"><b>Địa chỉ:</b></label>
+        <textarea id="diachi" name="diachi" rows="3"></textarea>
+
+        <label style="display:block; margin-top:10px;"><b>Học tốt các môn:</b></label>
+        <input type="checkbox" id="toan" value="toan"> Toán
+        <input type="checkbox" id="van" value="van"> Văn
+        <input type="checkbox" id="ngoaingu" value="ngoaingu"> Ngoại ngữ
+
+        <label style="display:block; margin-top:10px;"><b>Đăng kí CLB:</b></label>
+        <select id="dk" name="dk">
+            <option value="bc">Bóng chuyền</option>
+            <option value="bd">Bóng đá</option>				
+            <option value="cl">Cầu lông</option>
+            <option value="an">Âm nhạc</option>
+        </select>
+
+        <label style="display:block; margin-top:10px;"><b>Hồ sơ đính kèm:</b></label>
+        <input id="hoso" type="file">
+
+        <button type="submit" class="btn-submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
+
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="index.html" class="link">Về trang chủ</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Chặn từ ngữ nhạy cảm
+    const badWords = ["từ_xấu_1", "từ_xấu_2"]; 
+
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+        const text = (document.getElementById('hoten').value + document.getElementById('diachi').value).toLowerCase();
+        
+        if (badWords.some(word => text.includes(word))) {
+            e.preventDefault();
+            alert("Vui lòng không sử dụng từ ngữ không phù hợp!");
+        } else {
+            alert("Đã gửi thông tin thành công!");
+        }
+    });
+</script>
+
+</body>
+</html>
