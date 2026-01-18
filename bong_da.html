@@ -78,16 +78,16 @@
     </div>
 </footer>
 	   <script>
-         // JavaScript để scroll mượt mà đến section
+       
         function scrollToSection(id) {
             const element = document.getElementById(id);
             element.scrollIntoView({ behavior: 'smooth' });
-            // Đặt active class cho nav
+        
             document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
             document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
         }
 
-        // JavaScript để hiển thị section khi scroll vào view (hiệu ứng fade in)
+    
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -98,7 +98,7 @@
         });
         sections.forEach(section => observer.observe(section));
 
-        // JavaScript cho slideshow tự động
+   
         function startSlideshow(container) {
             const images = container.querySelectorAll('img');
             let currentIndex = 0;
@@ -110,7 +110,7 @@
         }
         document.querySelectorAll('.slideshow').forEach(startSlideshow);
 
-        // JavaScript cho quiz (sửa lỗi: truyền cả correctYear và selectedYear)
+
         function checkAnswer(correctYear, selectedYear) {
             const resultDiv = event.target.parentElement.querySelector('.result');
             if (selectedYear === correctYear) {
@@ -125,4 +125,5 @@
 </body>
 
 </html>
+
 
