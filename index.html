@@ -1,106 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> </title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cộng Đồng Thể Thao</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Tối ưu thêm một chút CSS trực tiếp để giao diện mượt hơn */
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Thay thế cấu trúc Table bằng Flex Row */
+        .sport-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            gap: 30px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .sport-item:hover { transform: translateY(-5px); }
+
+        .sport-item.reverse { flex-direction: row-reverse; }
+
+        .sport-content { flex: 1; padding: 30px; }
+
+        .sport-image { flex: 1; line-height: 0; }
+
+        .sport-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .btn-detail {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #darkred;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-detail:hover { background: #ff0000; color: #fff; }
+
+        /* Banner cải tiến */
+        .banner h1 span {
+            padding: 15px 30px;
+            background: rgba(0,0,0,0.6) !important; /* Đen mờ sang trọng hơn */
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
+
 <header>
-	<div class="banner">
-		<h1><span style="background-color:#C0C0C0">Cộng Đồng Thể Thao</span></h1>
-	</div>
-	<div class="slogan">
-		<div class="row">
-			<div id="b3a" class="block_3">
-				<h2>Năng động</h2>
-				<p>Hoạt động năng nổ và hiệu quả</p>
-			</div>
-			<div id="b3b" class="block_3">
-				<h2>Đam mê</h2>
-				<p>Cháy hết mình trong các cuộc chơi</p>
-			</div>
-			<div id="b3c"class="block_3">
-				<h2>Tỏa sáng</h2>
-				<p>Giành những giải thương cao nhất</p>
-			</div>	
-		</div>
-	</div>
+    <div class="banner">
+        <h1><span>Cộng Đồng Thể Thao</span></h1>
+    </div>
+    <div class="slogan">
+        <div class="row">
+            <div id="b3a" class="block_3">
+                <h2>Năng động</h2>
+                <p>Hoạt động năng nổ và hiệu quả</p>
+            </div>
+            <div id="b3b" class="block_3">
+                <h2>Đam mê</h2>
+                <p>Cháy hết mình trong các cuộc chơi</p>
+            </div>
+            <div id="b3c" class="block_3">
+                <h2>Tỏa sáng</h2>
+                <p>Giành những giải thưởng cao nhất</p>
+            </div>	
+        </div>
+    </div>
 </header>
-<table>
-	<tr>
-		<td class="cell_text">
-			<h3>Các môn thể thao được yêu thích nhất</h3>
-			
-			<ul>
-				<li>Bóng đá</li>
-				<li>Bóng chuyền</li>
-				<li>Cầu lông</li>
-				
-			</ul>
-		</td>
-		<td class="cell_img"><img src="images/thethao.jpg" class="img"></td>
-	</tr>
-	<tr>
-		<td class="cell_img"><img src="images/bongda.jpg" alt="Câu lạc bộ thể thao" class="img"></td>
-		<td class="cell_text">
-			<h3>Môn bóng đá</h3>
-			<ul>
-				<li>Bóng đá không chỉ là môn thể thao, đó là đam mê và tinh thần đồng đội.</li>
-				<li>Mỗi bàn thắng là kết quả của nỗ lực và chiến thuật.</li>
-				<li>Thắng thua không quan trọng bằng tinh thần thi đấu hết mình.</li>
-				
-			</ul>
-			<a href="bong_da.html">Chi tiết</a>
-		</td>
-	</tr>
-	<tr>
-		<td class="cell_text">
-		<h3>Môn bóng chuyền</h3>
-			<ul>
-				<li>Bóng chuyền là sức mạnh, sự khéo léo và tinh thần đồng đội.</li>
-				<li>Mỗi pha đập bóng là một lần bùng nổ năng lượng.</li>
-				<li>Không có cá nhân hoàn hảo, chỉ có một tập thể hoàn hảo.</li>
-			</ul>
-			<a href="bong_chuyen.html">Chi tiết</a>
-		</td>
-		<td class="cell_img"><img src="images/bongchuyen.webp" alt="Câu lạc bộ nghệ thuật" class="img"></td>
-	</tr>
-	<tr>
-		<td class="cell_img"><img src="images/caulong.jpg" alt="Câu lạc bộ thể thao" class="img"></td>
-		<td class="cell_text">
-			<h3>Môn cầu lông</h3>
-			<ul>
-				<li>Cầu lông rèn luyện sự nhanh nhẹn và phản xạ.</li>
-				<li>Mỗi cú đánh là sự kết hợp giữa kỹ thuật và sức bền.</li>
-				<li>Nhẹ nhàng nhưng đầy thử thách.</li>
-				
-			</ul>
-			<a href="cau_long.html">Chi tiết</a>
-		</td>
-	</tr>
-</table>
+
+<main class="section-container">
+    <h2 style="text-align:center; margin-bottom: 40px;">Khám Phá Các Bộ Môn</h2>
+
+    <div class="sport-item">
+        <div class="sport-image">
+            <img src="images/bongda.jpg" alt="Bóng đá">
+        </div>
+        <div class="sport-content">
+            <h3>Môn Bóng Đá</h3>
+            <ul>
+                <li>Đam mê và tinh thần đồng đội bất diệt.</li>
+                <li>Mỗi bàn thắng là một cung bậc cảm xúc.</li>
+                <li>Thi đấu hết mình vì màu cờ sắc áo.</li>
+            </ul>
+            <a href="bong_da.html" class="btn-detail">Xem chi tiết</a>
+        </div>
+    </div>
+
+    <div class="sport-item reverse">
+        <div class="sport-image">
+            <img src="images/bongchuyen.webp" alt="Bóng chuyền">
+        </div>
+        <div class="sport-content">
+            <h3>Môn Bóng Chuyền</h3>
+            <ul>
+                <li>Sức mạnh và sự khéo léo trong từng pha bóng.</li>
+                <li>Sự phối hợp nhịp nhàng của cả tập thể.</li>
+                <li>Bùng nổ năng lượng trên sân đấu.</li>
+            </ul>
+            <a href="bong_chuyen.html" class="btn-detail">Xem chi tiết</a>
+        </div>
+    </div>
+
+    <div class="sport-item">
+        <div class="sport-image">
+            <img src="images/caulong.jpg" alt="Cầu lông">
+        </div>
+        <div class="sport-content">
+            <h3>Môn Cầu Lông</h3>
+            <ul>
+                <li>Rèn luyện phản xạ nhanh nhẹn và bền bỉ.</li>
+                <li>Sự kết hợp hoàn hảo giữa kỹ thuật và tốc độ.</li>
+                <li>Thử thách giới hạn bản thân mỗi ngày.</li>
+            </ul>
+            <a href="cau_long.html" class="btn-detail">Xem chi tiết</a>
+        </div>
+    </div>
+</main>
+
 <footer>
-	<div class="row">
-		<div style="width: 60%;">
-			<p>Liên lạc:</p>
-			<ul>
-				<li>Điện thoại: 0123456789</li>
-				<li>Website: <a href="index.html" class="link"> Cộng Đồng Thể Thao </a></li>
-				<li>Tham gia CLB: <a href="Dang_ki.html" class="link">Tham gia Cộng đồng</a></li>
-			</ul>
-		</div>
-		<div style="width: 10%;"></div>
-		<div style="width: 30%;">
-		<p>Xem chi tiết:</p>
-			<ul>
-				<li><a href="bong_da.html" class="link">Trang web Bóng đá</a></li>
-				<li><a href="bong_chuyen.html" class="link">Trang web Bóng chuyền</a></li>
-				<li><a href="cau_long.html" class="link">Trang web Cầu lông</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="row" style="padding: 40px 10%;">
+        <div style="flex: 2;">
+            <h4 style="color: darkred;">LIÊN LẠC</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li>📞 Điện thoại: 0123456789</li>
+                <li>🌐 Website: <a href="index.html" class="link">Cộng Đồng Thể Thao</a></li>
+                <li>✉️ Tham gia: <a href="Dang_ki.html" class="link">Đăng ký ngay</a></li>
+            </ul>
+        </div>
+        <div style="flex: 1;">
+            <h4 style="color: darkred;">CHUYÊN MỤC</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="bong_da.html" class="link">Bóng đá</a></li>
+                <li><a href="bong_chuyen.html" class="link">Bóng chuyền</a></li>
+                <li><a href="cau_long.html" class="link">Cầu lông</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 10px; border-top: 1px solid #ccc; font-size: 0.8rem;">
+        © 2026 Cộng Đồng Thể Thao - Kết nối đam mê
+    </div>
 </footer>
+
 </body>
 </html>
