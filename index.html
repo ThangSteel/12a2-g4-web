@@ -9,7 +9,7 @@
         :root {
             --primary-color: #8b0000;
             --accent-color: #ff0000;
-            --dark-overlay: rgba(0,0,0,0.75);
+            --dark-overlay: rgba(0,0,0,0.7);
         }
 
         body { 
@@ -19,10 +19,11 @@
             color: #333;
         }
 
-        .hero {
+        .banner {
             height: 45vh;
-            background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('images/hero-bg.jpg') center/cover no-repeat;
-            background-color: #222; 
+            background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url("images/paner.jpg") no-repeat center center;
+            background-size: cover;
+            background-color: #222;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -33,7 +34,7 @@
             padding-bottom: 40px;
         }
 
-        .hero h1 {
+        .banner h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 3.2rem;
             margin: 0;
@@ -42,7 +43,7 @@
             text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
         }
 
-        .hero p {
+        .banner p {
             font-size: 1.2rem;
             margin-top: 10px;
             letter-spacing: 1px;
@@ -163,6 +164,7 @@
             width: 4px;
             height: 25px;
             background: var(--accent-color);
+            display: inline-block;
         }
 
         .info-row { 
@@ -202,7 +204,7 @@
 </head>
 <body>
 
-<header class="hero">
+<header class="banner">
     <h1>CỘNG ĐỒNG THỂ THAO</h1>
     <p>NƠI ĐAM MÊ RỰC CHÁY - THPT VĨNH TRẠCH</p>
 </header>
@@ -274,7 +276,7 @@
         <div class="footer-section">
             <h3>Liên kết nhanh</h3>
             <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></div>
-            <div class="info-row">🚀 <b>Tham gia:</b> <a href="Dang_ki.html">Đăng kí ngay</a></div>
+            <div class="info-row">👤 <b>Đăng kí:</b> <a href="Dang_ki.html">Tham gia ngay</a></div>
         </div>
 
         <div class="footer-section">
@@ -291,5 +293,3 @@
 
 </body>
 </html>
-
-
