@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Đăng ký thành viên - THPT Vĩnh Trạch</title>
+    <title>ĐĂNG KÍ THÀNH VIÊN - CỘNG ĐỒNG THỂ THAO</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         body {
@@ -33,20 +33,20 @@
         h2 { 
             color: darkred; 
             text-align: center; 
-            margin: 0 0 10px 0;
+            margin: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 1.5rem;
+            line-height: 1.4;
         }
 
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; margin-top: 15px; }
         
         label { 
             font-weight: bold; 
             display: block; 
             margin-bottom: 8px;
             color: #333;
-            font-size: 0.95rem;
         }
         
         input[type="text"], input[type="email"], input[type="date"], select, textarea {
@@ -96,7 +96,6 @@
 
         .btn-submit:hover {
             letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.5);
             filter: brightness(1.1);
         }
 
@@ -106,34 +105,26 @@
             text-decoration: none;
             color: #666;
             font-size: 0.9rem;
-            transition: color 0.3s;
         }
 
         .back-link:hover { color: darkred; }
-
-        input[type="file"] {
-            background: none;
-            border: none;
-            padding: 0;
-        }
     </style>
 </head>
 <body>
 
 <div class="form-card">
     <form id="regForm">
-        <h2>Đăng ký thành viên</h2>
-        <h2>Trường THPT Vĩnh Trạch</h2>
-        <br>
+        <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
+        <h2>CỘNG ĐỒNG THỂ THAO</h2>
 
         <div class="form-group">
             <label for="hoten">Họ và tên</label>
-            <input id="hoten" type="text" placeholder="Nguyễn Văn A" required>
+            <input id="hoten" type="text" placeholder="Nhập đầy đủ họ và tên..." required>
         </div>
 
         <div class="form-group">
             <label for="email">Địa chỉ Email</label>
-            <input id="email" type="email" placeholder="email@vi-du.com" required>
+            <input id="email" type="email" placeholder="nguyenvana@gmail.com" required>
         </div>
 
         <div class="row-flex">
@@ -156,11 +147,11 @@
 
         <div class="form-group">
             <label for="diachi">Địa chỉ liên hệ</label>
-            <textarea id="diachi" name="diachi" rows="3" placeholder="Số nhà, tên đường, phường/xã..."></textarea>
+            <textarea id="diachi" name="diachi" rows="3" placeholder="Nhập địa chỉ của bạn..."></textarea>
         </div>
 
         <div class="form-group">
-            <label for="dk">Môn thể thao yêu thích</label>
+            <label for="dk">Môn thể thao đăng kí</label>
             <select id="dk" name="dk" required>
                 <option value="" disabled selected>--- Chọn môn thể thao ---</option>
                 <option value="bd">Bóng đá</option>
@@ -170,11 +161,11 @@
         </div>
 
         <div class="form-group">
-            <label for="hoso">Hồ sơ đính kèm (nếu có)</label>
+            <label for="hoso">Hồ sơ đính kèm</label>
             <input id="hoso" type="file">
         </div>
 
-        <button type="submit" class="btn-submit">Hoàn tất đăng ký</button>
+        <button type="submit" class="btn-submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
 
         <div style="text-align: center;">
             <a href="index.html" class="back-link">← Quay về trang chủ</a>
@@ -193,7 +184,7 @@
             e.preventDefault();
             alert("Thông tin chứa từ ngữ không phù hợp. Vui lòng nhập lại!");
         } else {
-            alert("Chúc mừng! Bạn đã đăng ký thành công.");
+            alert("ĐĂNG KÝ THÀNH CÔNG!");
         }
     });
 </script>
