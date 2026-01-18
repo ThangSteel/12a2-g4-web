@@ -6,83 +6,58 @@
     <title>Đăng ký thành viên</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-        .registration-box {
-            background: #ffffff;
-            max-width: 700px;
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            color: #333;
+        /* Chỉ thêm một chút để cái khung và nút bấm nhìn rõ hơn */
+        .form-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
-        .form-title { color: darkred; text-align: center; margin-bottom: 25px; }
-        input[type="text"], input[type="email"], input[type="date"], select, textarea {
-            width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        h2 { color: darkred; text-align: center; }
+        
+        /* Làm cho các ô nhập liệu dễ nhìn hơn */
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .btn-send {
-            background-color: darkred; color: white; padding: 15px 20px; border: none; border-radius: 5px;
-            cursor: pointer; width: 100%; font-weight: bold; font-size: 1.1rem; margin-top: 20px;
+
+        /* NÚT GỬI TO RÕ - LUÔN HIỆN */
+        .btn-submit {
+            background-color: darkred;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
         }
-        .btn-send:hover { background-color: red; }
-        .label-text { font-weight: bold; display: block; margin-top: 10px; }
-        /* Style cho thông báo lỗi */
-        #error-msg { color: red; font-weight: bold; text-align: center; display: none; margin-bottom: 15px; }
+        .btn-submit:hover { background-color: red; }
     </style>
 </head>
 <body>
 
-<div class="registration-box">
-    <div class="form-title">
-        <h2>ĐĂNG KÍ THÀNH VIÊN CLB NGOẠI KHÓA</h2>
-        <h3>TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h3>
-    </div>
-
-    <p id="error-msg">Phát hiện từ ngữ không phù hợp! Vui lòng kiểm tra lại.</p>
-
+<div class="form-container">
     <form id="regForm">
-        <label class="label-text" for="hoten">Họ và tên:</label>
-        <input id="hoten" type="text" placeholder="Nhập họ tên của bạn..." required>
+        <h2>ĐĂNG KÍ THÀNH VIÊN CÂU LẠC BỘ NGOẠI KHÓA</h2>
+        <h2>TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h2>
 
-        <label class="label-text" for="email">Email:</label>
-        <input id="email" type="email" placeholder="example@gmail.com" required>
+        <label><b>Họ và tên:</b></label>
+        <input id="hoten" type="text" placeholder="Nhập họ tên...">
 
-        <label class="label-text" for="diachi">Địa chỉ:</label>
-        <textarea id="diachi" name="diachi" rows="3" placeholder="Nhập địa chỉ của bạn..."></textarea>
+        <label><b>Email:</b></label>
+        <input id="email" type="email" placeholder="example@gmail.com">
 
-        <label class="label-text" for="dk">Đăng kí CLB:</label>
-        <select id="dk" name="dk">
-            <option value="bd">Bóng đá</option>
-            <option value="bc">Bóng chuyền</option>				
-            <option value="cl">Cầu lông</option>
-        </select>
-
-        <button class="btn-send" type="submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
-
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="index.html" class="link">Quay về trang chủ</a>
-        </div>
-    </form>
-</div>
-
-<script>
-    const forbiddenWords = ["từ_xấu_1", "từ_xấu_2", "nhạy_cảm"]; // Thêm các từ bạn muốn chặn vào đây
-
-    document.getElementById('regForm').addEventListener('submit', function(e) {
-        let content = document.getElementById('hoten').value + " " + document.getElementById('diachi').value;
-        content = content.toLowerCase();
-
-        const hasForbidden = forbiddenWords.some(word => content.includes(word));
-
-        if (hasForbidden) {
-            e.preventDefault(); // Chặn không cho gửi form
-            document.getElementById('error-msg').style.display = 'block';
-            alert("Vui lòng sử dụng từ ngữ lịch sự!");
-        } else {
-            document.getElementById('error-msg').style.display = 'none';
-            alert("Gửi thành công!");
-        }
-    });
-</script>
-
-</body>
-</html>
+        <div style="display: flex; gap: 20px; margin-top: 10px;">
+            <div style="flex: 1;">
+                <label><b>Ngày sinh:</b></label>
+                <input id="ngaysinh" type="date">
+            </div>
+            <div
