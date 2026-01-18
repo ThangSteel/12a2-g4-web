@@ -141,15 +141,10 @@
             font-size: 1.1rem;
         }
 
-        .btn-detail:hover { 
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
-            filter: brightness(1.1);
-        }
-
         footer { 
-            background: #1a1a1a; 
+            background: #111; 
             color: #fff; 
-            padding: 60px 20px; 
+            padding: 70px 20px; 
             margin-top: 80px; 
         }
 
@@ -158,57 +153,65 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 20px;
         }
 
-        .footer-section { flex: 1; min-width: 300px; }
+        .footer-section { flex: 1; }
 
         .footer-section h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--accent-color);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-transform: uppercase;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-section h3::before {
+            content: '';
+            width: 5px;
+            height: 35px;
+            background: var(--accent-color);
+            display: inline-block;
         }
 
         .footer-section p { 
-            font-size: 1.2rem; 
-            margin: 15px 0; 
-            line-height: 1.8;
+            font-size: 1.3rem; 
+            margin: 20px 0; 
+            line-height: 1.6;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .footer-section a { 
             color: #fff; 
             text-decoration: none; 
+            background: #222;
+            padding: 8px 15px;
+            border-radius: 6px;
             transition: 0.3s;
-            background: rgba(255,255,255,0.1);
-            padding: 5px 15px;
-            border-radius: 5px;
         }
 
         .footer-section a:hover { 
             background: var(--accent-color);
-            color: #fff;
         }
 
         .footer-bottom {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.6;
         }
 
         @media (max-width: 768px) {
-            .footer-content { flex-direction: column; text-align: center; }
-            .footer-section h3 { border-left: none; border-bottom: 3px solid var(--accent-color); display: inline-block; padding: 0 0 10px 0; }
-            .footer-section p { justify-content: center; }
+            .footer-content { flex-direction: column; gap: 50px; }
+            .footer-section h3 { font-size: 1.8rem; }
+            .footer-section p { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -281,12 +284,11 @@
             <h3>Thông tin liên lạc</h3>
             <p>📞 <b>Hotline:</b> 0123.456.789</p>
             <p>📧 <b>Email:</b> hotro@congdongthethao.vn</p>
-            <p>📍 <b>Địa chỉ:</b> Khu vực rèn luyện thể chất</p>
         </div>
-        <div class="footer-section" style="text-align: right;">
-            <h3>Liên kết nhanh</h3>
-            <p>🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></p>
-            <p>👤 <b>Thành viên:</b> <a href="Dang_ki.html">Đăng ký tham gia ngay</a></p>
+        <div class="footer-section">
+            <h3 style="justify-content: flex-end;">Liên kết nhanh</h3>
+            <p style="justify-content: flex-end;">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></p>
+            <p style="justify-content: flex-end;">👤 <b>Thành viên:</b> <a href="Dang_ki.html">Đăng ký tham gia ngay</a></p>
         </div>
     </div>
     <div class="footer-bottom">
