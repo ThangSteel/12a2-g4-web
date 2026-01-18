@@ -209,11 +209,6 @@
             .footer-section h3, .info-row { justify-content: center; }
             .footer-section:nth-child(2), .footer-section:nth-child(3) { align-items: center; }
         }
-        h2 { 
-            color: #007bff; 
-            border-bottom: 2px solid #007bff; 
-            padding-bottom: 10px; 
-        }
         .slideshow { 
             position: relative; 
             max-width: 100%; 
@@ -256,20 +251,4 @@
             margin-top: 10px; 
             font-weight: bold; 
         }
-        footer { 
-            text-align: center; 
-            margin-top: 40px; 
-            padding: 10px; 
-            background-color: #007bff; 
-            color: white; 
-        }
-        @media (max-width: 768px) { 
-            nav a { 
-                display: block; 
-                margin: 10px 0; 
-            } 
-            section { 
-                margin: 10px; 
-                padding: 15px; 
-            } 
-        }
+        
