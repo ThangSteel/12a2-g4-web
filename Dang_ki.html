@@ -1,82 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng ký thành viên</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Chỉ ghi thêm các kiểu riêng cho Form để nó "xịn" hơn mà không cần sửa file styles.css */
+        .registration-box {
+            background: #ffffff;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            color: #333;
+        }
+
+        .form-title {
+            color: darkred; /* Theo tông màu banner của bạn */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* Tối ưu các ô nhập liệu cho to và dễ bấm */
+        input[type="text"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Đảm bảo không bị tràn khung */
+        }
+
+        /* Nút gửi to, rõ ràng, luôn hiển thị */
+        .btn-send {
+            background-color: darkred;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .btn-send:hover {
+            background-color: red;
+        }
+
+        .label-text {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-	
-<form>
-	<fieldset style="width: 50%;">
-		<h2>ĐĂNG KÍ THÀNH VIÊN CÂU LẠC BỘ NGOẠI KHÓA</h2>
-		<h2>TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h2>
-		<table>
-			<tr>
-				<td><label for="hoten">Họ và tên:</label></td>
-				<td><input id="hoten" type="text"></td>
-			</tr>
-			<tr>
-				<td><label for="email">Email:</label></td>
-				<td><input id="email" type="email"></td>
-			</tr>
-			<tr>			
-				<td><label for="ngaysinh">Ngày sinh:</label></td>
-				<td><input id="ngaysinh" type="date"></td>
-			</tr>
-			<tr>
-				<td><label>Giới tính:</label></td>
-				<td>
-				<input id="nam" type="radio" name="gioitinh" value="nam">
-				<label for="nam">Nam</label>
-				<input id="nu" type="radio" name="gioitinh" value="nu">
-				<label for="nu">Nữ</label>
-				</td>
-			</tr>
-			<tr>			
-				<td><label for="diachi">Địa chỉ:</label></td>
-				<td><textarea id="diachi" name="diachi" rows="5" cols="20">
-					</textarea>
-				</td>
-			</tr>
-				<td><label>Học tốt:</label></td>
-				<td>
-				<input type="checkbox" id="toan" name="monthi" value="toan">
-				<label for="toan">Toán</label>
-				<input type="checkbox" id="van" name="monthi" value="van">
-				<label for="van">Văn</label>
-				<input type="checkbox" id="ngoaingu" name="monthi" value="ngoaingu">
-				<label for="ngoaingu">Ngoại ngữ</label></td>
-			</tr>
-			<tr>			
-				<td><label for="hoso">Hồ sơ đính kèm:</label></td>
-				<td><input id="hoso" type="file"></td>
-			</tr>
-			<tr>
-				<td><label for="dk">Đăng kí CLB:</label></td>
-				<td><select id="dk" name="dk">
-					<option value="bc">Bóng chuyền</option>
-					<option value="bd">Bóng đá</option>				
-					<option value="br">Bóng rổ</option>
-					<option value="bl">Bơi lội</option>
-					<option value="cl">Cầu lông</option>
-					<option value="vt">Võ thuật</option>				
-					<option value="an">Âm nhạc</option>
-					<option value="kv">Khiêu vũ</option>
-					<option value="mt">Mĩ thuật</option>
-					<option value="na">Nhiếp ảnh</option>
-				</select>
-				</td>
-			</tr>
-			<tr><td></td>
-				<td ><button style="color: blue; font-weight: bold;" type="submit">Gửi thông tin</button></td>
-			</tr>
-			<tr><td></td>
-				<td ><a href="index.html" class="link">Về trang chủ </a></td>
-			</tr>
-			
-		</table>
-	</fieldset>
-</form>
+
+<div class="registration-box">
+    <div class="form-title">
+        <h2 style="margin: 0;">ĐĂNG KÍ THÀNH VIÊN CLB NGOẠI KHÓA</h2>
+        <h3 style="margin: 5px 0;">TRƯỜNG THPT NGUYỄN BỈNH KHIÊM</h3>
+    </div>
+
+    <form>
+        <label class="label-text" for="hoten">Họ và tên:</label>
+        <input id="hoten" type="text" placeholder="Nhập họ tên của bạn..." required>
+
+        <label class="label-text" for="email">Email:</label>
+        <input id="email" type="email" placeholder="example@gmail.com" required>
+
+        <div style="display: flex; gap: 20px;">
+            <div style="flex: 1;">
+                <label class="label-text" for="ngaysinh">Ngày sinh:</label>
+                <input id="ngaysinh" type="date">
+            </div>
+            <div style="flex: 1;">
+                <label class="label-text">Giới tính:</label>
+                <div style="margin-top: 10px;">
+                    <input id="nam" type="radio" name="gioitinh" value="nam"> <label for="nam">Nam</label>
+                    <input id="nu" type="radio" name="gioitinh" value="nu" style="margin-left: 15px;"> <label for="nu">Nữ</label>
+                </div>
+            </div>
+        </div>
+
+        <label class="label-text" for="diachi">Địa chỉ:</label>
+        <textarea id="diachi" name="diachi" rows="3" placeholder="Nhập địa chỉ của bạn..."></textarea>
+
+        <label class="label-text">Môn học yêu thích:</label>
+        <div style="margin: 10px 0;">
+            <input type="checkbox" id="toan" name="monthi" value="toan"> <label for="toan">Toán</label>
+            <input type="checkbox" id="van" name="monthi" value="van" style="margin-left: 10px;"> <label for="van">Văn</label>
+            <input type="checkbox" id="ngoaingu" name="monthi" value="ngoaingu" style="margin-left: 10px;"> <label for="ngoaingu">Ngoại ngữ</label>
+        </div>
+
+        <label class="label-text" for="dk">Đăng kí CLB:</label>
+        <select id="dk" name="dk">
+            <option value="bd">Bóng đá</option>
+            <option value="bc">Bóng chuyền</option>				
+            <option value="cl">Cầu lông</option>
+            <option value="br">Bóng rổ</option>
+            <option value="an">Âm nhạc</option>
+            <option value="mt">Mĩ thuật</option>
+        </select>
+
+        <label class="label-text" for="hoso">Hồ sơ đính kèm:</label>
+        <input id="hoso" type="file" style="border: none; padding: 0;">
+
+        <button class="btn-send" type="submit">GỬI THÔNG TIN ĐĂNG KÝ</button>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="index.html" class="link">Quay về trang chủ</a>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
