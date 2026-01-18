@@ -64,9 +64,55 @@
 		</div>
 	</div>
 </footer>
+	  <script>
+         // JavaScript để scroll mượt mà đến section
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            element.scrollIntoView({ behavior: 'smooth' });
+            // Đặt active class cho nav
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+        }
+
+        // JavaScript để hiển thị section khi scroll vào view (hiệu ứng fade in)
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        sections.forEach(section => observer.observe(section));
+
+        // JavaScript cho slideshow tự động
+        function startSlideshow(container) {
+            const images = container.querySelectorAll('img');
+            let currentIndex = 0;
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, 3000); // Chuyển ảnh mỗi 3 giây
+        }
+        document.querySelectorAll('.slideshow').forEach(startSlideshow);
+
+        // JavaScript cho quiz (sửa lỗi: truyền cả correctYear và selectedYear)
+        function checkAnswer(correctYear, selectedYear) {
+            const resultDiv = event.target.parentElement.querySelector('.result');
+            if (selectedYear === correctYear) {
+                resultDiv.textContent = 'Đúng! Bạn rất giỏi.';
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.textContent = `Sai! Đáp án đúng là ${correctYear}.`;
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
 </body>
 
 </html>
+
 
 
 
