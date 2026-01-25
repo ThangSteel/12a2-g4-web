@@ -41,8 +41,8 @@
         <div class="sport-content">
             <h3>KHÁI QUÁT VỀ BÓNG ĐÁ</h3>
             <p>Bóng đá là một môn thể thao đồng đội được chơi với một quả bóng hình cầu giữa hai đội gồm 11 cầu thủ. Nó được khoảng 250 triệu người chơi ở hơn 200 quốc gia và vùng lãnh thổ, khiến nó trở thành môn thể thao phổ biến nhất thế giới. Bóng đá giúp con người ta phát triển tốt hơn về sức khỏe, thể lực, rèn luyện sự bền bỉ dẻo dai và đặc biệt là sự nhạy bén và tư duy chiến thuật.</p>
-            <p><strong>Lịch sử:</strong> FIFA được thành lập vào năm 1904. World Cup đầu tiên được tổ chức vào năm 1930.</p>
-            <p><strong>Quy tắc cơ bản:</strong> Hai đội chơi trên một sân hình chữ nhật. Mục tiêu là ghi bàn vào lưới đối thủ bằng cách đưa quả bóng vào lưới.</p>
+            <p><strong>Lịch sử:</strong> Liên đoàn bóng đá thế giới (FIFA) được thành lập vào năm 1904. Giải vô địch bóng đá thế giới (World Cup) đầu tiên được tổ chức vào năm 1930.</p>
+            <p><strong>Quy tắc cơ bản:</strong> Hai đội chơi trên một sân hình chữ nhật với một khung thành ở mỗi đầu sân. Mục tiêu của trò chơi là ghi bàn vào lưới đối thủ bằng cách đưa quả bóng vào lưới.</p>
         </div>
     </div>
 
@@ -53,9 +53,9 @@
         <div class="sport-content">
             <h3>SỨC KHỎE VÀ BÓNG ĐÁ</h3>
             <ul class="soccer-list">
-                <li>Tăng cường hệ thống tim mạch và hô hấp.</li>
-                <li>Phát triển khả năng vận động và sự linh hoạt.</li>
-                <li>Rèn luyện tính kỷ luật và tinh thần đồng đội.</li>
+                <li>Tăng cường hệ thống tim mạch và hô hấp qua việc chạy liên tục.</li>
+                <li>Phát triển khả năng vận động, sự linh hoạt và sức mạnh cơ bắp.</li>
+                <li>Rèn luyện tính kỷ luật, ý chí kiên cường và tinh thần đồng đội.</li>
             </ul>
             <div class="quiz">
                 <h3>Quiz Nhanh</h3>
@@ -81,6 +81,7 @@
             <div class="footer-inner">
                 <h3>Liên kết nhanh</h3>
                 <div class="info-row">🌐 <b>Trang chính:</b> <a href="index.html">Cộng Đồng Thể Thao</a></div>
+                <div class="info-row">🚀 <b>Đăng kí:</b> <a href="Dang_ki.html">Tham gia ngay</a></div>
             </div>
         </div>
         <div class="footer-section">
@@ -107,13 +108,13 @@
     }
     document.querySelectorAll('.slideshow').forEach(startSlideshow);
 
-    function checkAnswer(correctYear, selectedYear) {
+    function checkAnswer(correct, selected) {
         const resultDiv = event.target.parentElement.querySelector('.result');
-        if (selectedYear === correctYear) {
+        if (selected === correct) {
             resultDiv.textContent = 'Đúng! Bạn rất giỏi.';
             resultDiv.style.color = 'green';
         } else {
-            resultDiv.textContent = `Sai! Đáp án đúng là ${correctYear}.`;
+            resultDiv.textContent = `Sai rồi! Đáp án đúng là ${correct}.`;
             resultDiv.style.color = 'red';
         }
     }
