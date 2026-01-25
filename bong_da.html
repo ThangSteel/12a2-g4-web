@@ -11,7 +11,7 @@
 
 <header class="banner">
     <h1>CỘNG ĐỒNG THỂ THAO</h1>
-    <p>BÓNG ĐÁ - MÔN THỂ THAO VUA</p>
+    <p>NƠI ĐAM MÊ RỰC CHÁY - KẾT NỐI TINH THẦN THỂ THAO</p>
 </header>
 
 <div class="slogan-container">
@@ -39,10 +39,10 @@
             </div>
         </div>
         <div class="sport-content">
-            <h3>Khái quát về bóng đá</h3>
-            <p>Bóng đá là môn thể thao đồng đội phổ biến nhất trên thế giới, đòi hỏi sự phối hợp nhịp nhàng giữa các cầu thủ.</p>
-            <p><strong>Lịch sử:</strong> FIFA được thành lập năm 1904 và World Cup bắt đầu từ năm 1930.</p>
-            <p><strong>Quy tắc:</strong> Trận đấu gồm 2 đội, mỗi đội 11 cầu thủ, thi đấu trên sân cỏ hình chữ nhật.</p>
+            <h3>KHÁI QUÁT VỀ BÓNG ĐÁ</h3>
+            <p>Bóng đá là một môn thể thao đồng đội được chơi với một quả bóng hình cầu giữa hai đội gồm 11 cầu thủ. Nó được khoảng 250 triệu người chơi ở hơn 200 quốc gia và vùng lãnh thổ, khiến nó trở thành môn thể thao phổ biến nhất thế giới. Bóng đá giúp con người ta phát triển tốt hơn về sức khỏe, thể lực, rèn luyện sự bền bỉ dẻo dai và đặc biệt là sự nhạy bén và tư duy chiến thuật.</p>
+            <p><strong>Lịch sử:</strong> FIFA được thành lập vào năm 1904. World Cup đầu tiên được tổ chức vào năm 1930.</p>
+            <p><strong>Quy tắc cơ bản:</strong> Hai đội chơi trên một sân hình chữ nhật. Mục tiêu là ghi bàn vào lưới đối thủ bằng cách đưa quả bóng vào lưới.</p>
         </div>
     </div>
 
@@ -51,11 +51,11 @@
             <img src="images/bongda.jpg" alt="Health">
         </div>
         <div class="sport-content">
-            <h3>Lợi ích sức khỏe</h3>
+            <h3>SỨC KHỎE VÀ BÓNG ĐÁ</h3>
             <ul class="soccer-list">
-                <li>Tăng cường sức bền và sức mạnh cơ bắp.</li>
-                <li>Cải thiện hệ hô hấp và tim mạch.</li>
-                <li>Giảm nguy cơ béo phì qua việc vận động liên tục.</li>
+                <li>Tăng cường hệ thống tim mạch và hô hấp.</li>
+                <li>Phát triển khả năng vận động và sự linh hoạt.</li>
+                <li>Rèn luyện tính kỷ luật và tinh thần đồng đội.</li>
             </ul>
             <div class="quiz">
                 <h3>Quiz Nhanh</h3>
@@ -107,13 +107,13 @@
     }
     document.querySelectorAll('.slideshow').forEach(startSlideshow);
 
-    function checkAnswer(correct, selected) {
+    function checkAnswer(correctYear, selectedYear) {
         const resultDiv = event.target.parentElement.querySelector('.result');
-        if (selected === correct) {
+        if (selectedYear === correctYear) {
             resultDiv.textContent = 'Đúng! Bạn rất giỏi.';
             resultDiv.style.color = 'green';
         } else {
-            resultDiv.textContent = 'Sai rồi! Thử lại nhé.';
+            resultDiv.textContent = `Sai! Đáp án đúng là ${correctYear}.`;
             resultDiv.style.color = 'red';
         }
     }
